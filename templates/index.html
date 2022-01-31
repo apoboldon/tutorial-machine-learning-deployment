@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,23 +7,18 @@
   </head>
   <body>
     <form action="{{ url_for('main') }}" method="POST">
-      <label for="acceleration">Acceleration (m/s^2):</label><br />
+      <label for="number_courses">number_courses:</label><br />
       <input
         type="number"
-        id="acceleration"
-        name="acceleration"
-        required
+        id="number_courses"
+        name="number_courses"
+        value="34"
       /><br />
-      <label for="weight">Weight (kg):</label><br />
-      <input type="number" id="weight" name="weight" required /><br /><br />
+      <label for="time_study">Time (hours):</label><br />
+      <input type="number" id="time_study" name="time_study" value="12" /><br /><br />
       <input type="submit" value="Submit" />
     </form>
-    <br />
-    {% if result %}
-    <p>
-      The calculated fuel consumption is
-      <span style="color: orange">{{result}}</span>
-    </p>
-    {% endif %}
+
+    <p>el numero de asignaturas sera de {{result}}</p>
   </body>
 </html>

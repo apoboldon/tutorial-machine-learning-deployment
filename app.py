@@ -13,13 +13,13 @@ def main():
         return(flask.render_template(template_name_or_list='index.html'))
 
     if flask.request.method == 'POST':
-        acceleration = flask.request.form['acceleration']
-        weight = flask.request.form['weight']
+        number_courses = flask.request.form['number_courses']
+        time_study = flask.request.form['time_study']
 
-        acceleration = float(acceleration)
-        weight = float(weight)
+        number_courses = float(number_courses)
+        time_study = float(time_study)
 
-        input_variables = [[acceleration, weight]]
+        input_variables = [[number_courses, time_study]]
         prediction = model.predict(input_variables)[0]
         prediction = round(prediction, 2)
 
